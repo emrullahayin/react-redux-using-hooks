@@ -5,10 +5,12 @@ const initialState = {
 function rootReducer(state = initialState, action) {
   switch (action.type) {
     case "INCREMENT":
-      return { counter: state.counter + 1 };
+      return { counter: ++state.counter };
     case "DECREMENT":
-      return { counter: state.counter - 1 };
+      return { counter: --state.counter };
     default:
       return state;
   }
 }
+
+export default rootReducer;
